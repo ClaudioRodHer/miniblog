@@ -1,0 +1,26 @@
+# Archivos de compilación
+/target/
+*.class
+
+# Archivos de configuración de IDE
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+
+# Logs
+*.log
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Dependencias descargadas por Gradle (si usas Gradle)
+.gradle/
+build/
+
+# Dependencias descargadas por Maven (si usas Maven)
+.mvn/
+*.war
+*.jar
