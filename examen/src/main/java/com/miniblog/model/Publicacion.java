@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import java.time.LocalDate;
 
@@ -15,16 +16,36 @@ public class Publicacion {
     private Long id;
 
     @Column(nullable = false)
-    private String titulo;
-
-    @Column(nullable = false, length = 1000)
-    private String contenido;
+    private String cuerpo;
 
     @ManyToOne
+    @JoinColumn(name = "id_persona", nullable = false)
     private Persona autor;
 
-    @Column(nullable = false)
-    private LocalDate fechaCreacion;
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getCuerpo() {
+		return cuerpo;
+	}
+
+	public void setCuerpo(String cuerpo) {
+		this.cuerpo = cuerpo;
+	}
+
+	public Persona getAutor() {
+		return autor;
+	}
+
+	public void setAutor(Persona autor) {
+		this.autor = autor;
+	}
 
     // Getters y Setters
+    
 }

@@ -37,11 +37,9 @@ public class PersonaService {
     public Persona updatePersona(Long id, Persona personaDetails) {
         return personaRepository.findById(id)
             .map(persona -> {
-                persona.setNombres(personaDetails.getNombres());
-                persona.setApellidos(personaDetails.getApellidos());
-                persona.setSexo(personaDetails.getSexo());
-                persona.setPais(personaDetails.getPais());
-                persona.setDireccion(personaDetails.getDireccion());
+                persona.setNombre(personaDetails.getNombre());
+                persona.setApellido(personaDetails.getApellido());
+                persona.setUsuario(personaDetails.getUsuario());
                 return personaRepository.save(persona);
             }).orElseThrow(() -> new RuntimeException("Persona no encontrada"));
     }

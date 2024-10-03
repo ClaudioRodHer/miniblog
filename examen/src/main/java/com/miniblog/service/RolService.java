@@ -37,7 +37,7 @@ public class RolService {
     public Rol updateRol(Long id, Rol rolDetails) {
         return rolRepository.findById(id)
             .map(rol -> {
-                rol.setTipo(rolDetails.getTipo());
+                rol.setTipo(rolDetails.getTipo()); 
                 return rolRepository.save(rol);
             }).orElseThrow(() -> new RuntimeException("Rol no encontrado"));
     }

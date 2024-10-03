@@ -3,7 +3,6 @@ package com.miniblog.model;
 
 import jakarta.persistence.*;
 import java.util.List;
-
 @Entity
 public class Rol {
     @Id
@@ -16,6 +15,31 @@ public class Rol {
     @OneToMany(mappedBy = "rol")
     private List<UsuarioRol> usuarioRoles;
 
-    // Getters y Setters
-}
+	public Long getId() {
+		return id;
+	}
 
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public List<UsuarioRol> getUsuarioRoles() {
+		return usuarioRoles;
+	}
+
+	public void setUsuarioRoles(List<UsuarioRol> usuarioRoles) {
+		this.usuarioRoles = usuarioRoles;
+	}
+
+    // Getters y Setters
+    
+    
+}

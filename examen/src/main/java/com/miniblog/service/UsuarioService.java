@@ -38,7 +38,7 @@ public class UsuarioService {
         return usuarioRepository.findById(id)
             .map(usuario -> {
                 usuario.setUsuario(usuarioDetails.getUsuario());
-                usuario.setContrasena(usuarioDetails.getContrasena());
+                usuario.setContraseña(usuarioDetails.getContraseña());
                 usuario.setEstado(usuarioDetails.getEstado());
                 return usuarioRepository.save(usuario);
             }).orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
